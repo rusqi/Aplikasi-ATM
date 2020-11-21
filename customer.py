@@ -1,22 +1,22 @@
 from atm_card import ATMCard
 
-
 class Customer:
-    def __init__(self, id, custPin=1234, custBalance=10000):
+    def __init__(self, id, custPin = 1234, custBalance = 10000):
         self.id = id
-        self.custPin = custPin
-        self.custBalance = custBalance
+        self.pin = custPin
+        self.balance = custBalance
 
-    def withdrawBalance(self, nominal):
-        debet = self.custBalance - nominal
-        return debet
-
-    def depositBalance(self, nominal):
-        simpan = self.custBalance + nominal
-        return simpan
+    def checkId(self):
+        return self.id
 
     def checkPin(self):
-        return self.custPin
+        return self.pin
 
     def checkBalance(self):
-        return self.custBalance
+        return self.balance
+
+    def withdrawBalance(self, nominal):
+        self.balance -= nominal
+
+    def depositBalance(self, nominal):
+        self.balance += nominal
